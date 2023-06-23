@@ -8,6 +8,8 @@ const connect = function () {
   conn.on('connect', () => {
     console.log("Successfully connected to the game server");
     conn.write('Name: BLE');
+    // conn.write('Move: up');
+    // conn.write('Move: left');
   });
 
   conn.on("data", (data) => {
