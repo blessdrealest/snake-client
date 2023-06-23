@@ -5,6 +5,11 @@ const connect = function () {
     port: 50541
   });
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to the game server");
+    conn.write('Name: BLE');
+  });
+
   conn.on("data", (data) => {
     console.log("Server says:", data);
   });
