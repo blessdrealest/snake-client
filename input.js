@@ -1,47 +1,32 @@
+const { up, left, down, right, talk } = require('./constants');
  
- 
- //stores the active TCP connection object
- let connection;
+//stores the active TCP connection object
+let connection;
 
- const msg = "Say: ";
- const hi = "Hi there! ";
- const snk = "Sssssnake!";
- const good = "Keep going!";
 
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
 
-  if (key === w) {
+  if (key === up) {
     connection.write('Move: up');
   }
-  if (key === a) {
+  if (key === left) {
     connection.write('Move: left');
   }
-  if (key === s) {
+  if (key === down) {
     connection.write('Move: down');
   }
-  if (key === d) {
+  if (key === right) {
     connection.write('Move: right');
   }
-
-  if (key === m) {
-    connection.write(msg + hi);
+  if (talk[key]) {
+    connection.write(talk[key]);
   }
-  if (key === n) {
-    connection.write(hi + stay);
-    }
-
- 
-
-
-
-
-
 
 };
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
