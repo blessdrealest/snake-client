@@ -1,6 +1,5 @@
 const { up, left, down, right, talk } = require('./constants');
  
-//stores the active TCP connection object
 let connection;
 
 
