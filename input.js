@@ -5,24 +5,24 @@
 
  const msg = "Say: ";
  const hi = "Hi there! ";
- const stay = "Stay a while...";
- const listen = "...and listen!";
+ const snk = "Sssssnake!";
+ const good = "Keep going!";
 
 const handleUserInput = function (key) {
   if (key === '\u0003') {
     process.exit();
   }
 
-  if (key === MOVE_UP_KEY) {
+  if (key === w) {
     connection.write('Move: up');
   }
-  if (key === MOVE_LEFT_KEY) {
+  if (key === a) {
     connection.write('Move: left');
   }
-  if (key === MOVE_DOWN_KEY) {
+  if (key === s) {
     connection.write('Move: down');
   }
-  if (key === MOVE_RIGHT_KEY) {
+  if (key === d) {
     connection.write('Move: right');
   }
 
