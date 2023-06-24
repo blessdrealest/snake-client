@@ -3,6 +3,11 @@
  //stores the active TCP connection object
  let connection;
 
+ const msg = "Say: ";
+ const hi = "Hi there! ";
+ const stay = "Stay a while...";
+ const listen = "...and listen!";
+
 const handleUserInput = function (key) {
   if (key === '\u0003') {
     process.exit();
@@ -20,6 +25,13 @@ const handleUserInput = function (key) {
   if (key === MOVE_RIGHT_KEY) {
     connection.write('Move: right');
   }
+
+  if (key === m) {
+    connection.write(msg + hi);
+  }
+  if (key === n) {
+    connection.write(hi + stay);
+    }
 
  
 
