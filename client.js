@@ -1,16 +1,15 @@
 const { IP, PORT } = require("./constants");
 const net = require("net");
+
 const connect = function () {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   conn.on('connect', () => {
     console.log("Successfully connected to the game server");
     conn.write('Name: BLE');
-    // conn.write('Move: up');
-    // conn.write('Move: left');
   });
 
   conn.on("data", (data) => {
@@ -24,5 +23,5 @@ const connect = function () {
 };
 
 module.exports = {
-  connect,
+  connect
 };
